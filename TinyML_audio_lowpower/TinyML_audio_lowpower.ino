@@ -22,14 +22,14 @@
  * SOFTWARE.
  */
 
+#include <NDP.h>
+#include <NDP_utils.h>
+#include <Arduino.h>
+#include "TinyML_init.h"
 #include "NDP_init.h"
 #include "NDP_loadModel.h"
 #include "SAMD21_init.h"
 #include "SAMD21_lowpower.h"
-#include "TinyML_init.h"
-#include <Arduino.h>
-#include <NDP.h>
-#include <NDP_utils.h>
 
 typedef enum {
   MATCH_NONE = 0,
@@ -37,10 +37,8 @@ typedef enum {
   MATCH_STOP_MUSIC,
 } classifier_match_t;
 
-typedef enum {
-  NDP_MICROPHONE = 0,
-  NDP_SENSOR = 1,
-} ndp_source_t;
+#define NDP_MICROPHONE 0
+#define NDP_SENSOR 1
 
 // Written at interrupt level (ndp_isr), read in service_ndp()
 static volatile classifier_match_t s_match;
