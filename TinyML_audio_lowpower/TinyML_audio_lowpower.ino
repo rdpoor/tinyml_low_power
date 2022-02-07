@@ -80,8 +80,8 @@ void service_ndp() {
 void setup(void) {
   // Initialize the SAMD21 host processor
   SAMD21_init(0);
-  // Install the model for "Alexa, play music" and "Alexa, stop music".  The
-  // model was created using Edge Impulse.
+  // load the the board with the model "google10.bin" it was shipped from the \
+  // factory
   NDP_init("google10.bin", NDP_MICROPHONE);
   // The NDP101 will wake the SAMD21 upon detection
   attachInterrupt(NDP_INT, ndp_isr, HIGH);

@@ -83,7 +83,7 @@ blink on briefly to show that the NDP1000 recognized the phrase.  When you say
 
 ## Troubleshooting
 
-TBD.
+It is assumed that your TinyML board has never gone through the formatting process of the serial flash which is conducted by “:F” command in the serial monitor window. If the RGB LED is stuck in “Blue” color, then it is likely that “google10.bin” is either deleted or got corrupted. Please follow the tutorial under https://www.syntiant.com/tinyml page. This will populate the “ei_model.bin” file in the serial flash of the TinyML board. Change the sketch’s line #85. Replace “google10.bin” with “ei_model.bin” . Then use “go” and “stop” keywords to test it.  
 
 ## Implementation Details
 
